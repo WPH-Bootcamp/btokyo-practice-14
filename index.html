@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <style>
+      /* id 
+      #judul {
+        color: red;
+      }
+
+      /* class  */
+      .paragraf {
+        color: blue;
+      }
+
+      /* tag  */
+      span {
+        color: green;
+      } */
+    </style> -->
+  </head>
+  <body>
+    <h1 id="judul">Judul</h1>
+
+    <p class="paragraf">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam, at
+      quae. Illo adipisci quaerat consequatur. Aperiam minus dicta iusto
+      molestiae maiores culpa quo corrupti praesentium sint, doloremque,
+      assumenda nisi recusandae!
+    </p>
+
+    <p class="paragraf">Ini lain</p>
+
+    <p>Halo</p>
+
+    <span>Keterangan</span>
+
+    <span>Kesimpulan</span>
+
+    <img id="img" src="https://upload.wikimedia.org/wikipedia/id/e/e0/Iron_Man_bleeding_edge.jpg" style="width: 200px; height: 200px;" alt="">
+
+    <button>Resize</button>
+
+    <script>
+      // const judul = document.getElementById("judul");
+      // console.log(judul);
+      // const paragraf = document.getElementsByClassName("paragraf");
+      // console.log(paragraf[1]);
+
+      // const paragraf = document.querySelector(".paragraf");
+      // const paragrafAll = document.querySelectorAll(".paragraf");
+      // console.log(paragraf); // node
+      // console.log(paragrafAll); // node list
+
+      document.getElementById("resize").addEventListener("click", () => {
+        const img = document.getElementById("img");
+        img.style.width = "400px";
+      });
+
+      document.getElementById("judul").style.textAlign = "center"; // mengubah teks judul
+      document.getElementById("judul").addEventListener("click", () => {
+        alert("Judul di klik");
+      });
+
+      // id
+      document.getElementById("judul").style.color = "red"; // single element return html collection
+      // document.querySelector("#judul").style.color = "red"; // single element return nodelist
+
+      // class
+      document.getElementsByClassName("paragraf")[0].style.color = "blue"; // multiple elements return html collection
+      //   document.getElementsByClassName("paragraf")[1].style.color = "blue"; // multiple elements return html collection
+      // document.querySelector(".paragraf").style.color = "blue"; // single element return node
+      // document.querySelectorAll(".paragraf")[1].style.color = "blue"; // multiple elements return nodelist
+
+      // tag
+      document.getElementsByTagName("span")[0].style.color = "green"; // multiple elements return html collection
+      // document.querySelector("span").style.color = "green"; // single element return node
+      // document.querySelectorAll("span")[1].style.color = "green"; // multiple elements return nodelist
+    </script>
+  </body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* Reset & Global Style */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background-color: #f4f4f4;
+        color: #333;
+      }
+
+      /* Hamburger Button */
+      #hamburger {
+        font-size: 28px;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        margin: 20px;
+        border-radius: 6px;
+        transition: background 0.3s ease;
+      }
+
+      #hamburger:hover {
+        background-color: #0056b3;
+      }
+
+      /* Navigation Menu */
+      nav#nav-menu {
+        background-color: #fff;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        margin: 10px 20px;
+        padding: 10px 0;
+        transition: all 0.3s ease;
+      }
+
+      nav#nav-menu ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding: 10px 20px;
+      }
+
+      nav#nav-menu ul li a {
+        text-decoration: none;
+        color: #007bff;
+        font-size: 18px;
+        transition: color 0.3s ease;
+      }
+
+      nav#nav-menu ul li a:hover {
+        color: #0056b3;
+      }
+
+      /* Utility Classes */
+      .hidden {
+        display: none;
+      }
+
+      .show {
+        display: block;
+      }
+
+      @media (min-width: 768px) {
+        nav#nav-menu ul {
+          flex-direction: row;
+        }
+
+        #hamburger {
+          display: none;
+        }
+
+        .show {
+          display: flex !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <button id="hamburger">☰</button>
+    <nav id="nav-menu" class="hidden">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </nav>
+
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const navMenu = document.getElementById("nav-menu");
+
+      hamburger.addEventListener("click", () => {
+        navMenu.classList.toggle("show");
+      });
+    </script>
+  </body>
+</html>

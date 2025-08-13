@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        gap: 10px;
+        margin: 20px auto;
+      }
+
+      input {
+        padding: 10px;
+        font-size: 16px;
+        border: 2px solid #ddd;
+        border-radius: 6px;
+        transition: border-color 0.3s ease;
+      }
+
+      input:focus {
+        border-color: #007bff;
+        outline: none;
+      }
+
+      .error-msg {
+        color: crimson;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="form" class="form-group">
+      <label for="name">Nama:</label>
+      <input type="text" id="name" placeholder="Masukkan nama" onchange="validateName()"/>
+      <small id="name-error" class="error-msg"></small>
+    </form>
+
+    <script>
+        function validateName() {
+          setTimeout(() => {
+            const nameInput = document.getElementById("name");
+            const errorMsg = document.getElementById("name-error");
+            const nameValue = nameInput.value.trim();
+            if (nameValue.length < 3) {
+              errorMsg.textContent = "Nama harus lebih dari 3 karakter";
+              nameInput.style.borderColor = "crimson";
+            } else {
+              errorMsg.textContent = "";
+              nameInput.style.borderColor = "#ddd";
+            }
+          }, 1000);
+        }
+    </script>
+  </body>
+</html>

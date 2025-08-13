@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body.light-theme {
+        background-color: #ffffff;
+        color: #212529;
+        transition: all 0.3s ease;
+      }
+
+      body.dark-theme {
+        background-color: #121212;
+        color: #e0e0e0;
+        transition: all 0.3s ease;
+      }
+
+      /* Toggle Button */
+      #theme-toggle {
+        padding: 10px 20px;
+        background: #6c757d;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        margin: 20px;
+        transition: background 0.3s ease;
+      }
+
+      #theme-toggle:hover {
+        background: #495057;
+      }
+
+      @media (min-width: 768px) {
+        nav#nav-menu ul {
+          flex-direction: row;
+        }
+
+        #hamburger {
+          display: none;
+        }
+
+        .show {
+          display: flex !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <button id="theme-toggle">Toggle Theme</button>
+    <script>
+      const toggle = document.getElementById("theme-toggle");
+
+      toggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark-theme");
+        document.body.classList.toggle("light-theme");
+      });
+    </script>
+  </body>
+</html>

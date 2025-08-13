@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="list">
+      <li>Item 1</li>
+    </ul>
+    <button id="add">Tambah Item</button>
+
+    <script>
+      const htmlCol = document.getElementsByTagName("li"); // HTMLCollection
+      const nodeList = document.querySelectorAll("li"); // NodeList
+
+    //   document.getElementById("add").addEventListener("click", () => {})
+
+      document.getElementById("add").addEventListener("click", () => {
+        const li = document.createElement("li");
+        li.textContent = "Item baru";
+        // <li>Item Baru</li>    
+        document.getElementById("list").appendChild(li);
+
+        console.log("HTMLCollection: ", htmlCol.length); // naik setiap klik
+        console.log("NodeList: ", nodeList.length); // tetap
+      });
+    </script>
+  </body>
+</html>
